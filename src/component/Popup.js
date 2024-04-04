@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import "./App.css";
-import Pannel from "./component/Pannel";
+import "./Pannel.css";
+import Pannel from "./Pannel";
 
 const Popup = () => {
   // State to control popup visibility
   const [showPopup, setShowPopup] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
-  const [isFull, setFull] =useState(false);
 
   // Function to toggle popup visibility
   const togglePopup = () => {
@@ -20,18 +19,11 @@ const Popup = () => {
   // Function to close panel
   const closePanel = () => {
     setShowPanel(false);
-    setFull(false)
   };
 
   const expandPanel = () => {
     const panelElement = document.querySelector(".panel");
     panelElement.style.width = "100%";
-    setFull(true)
-  };
-  const halfPanel = () => {
-    const panelElement = document.querySelector(".panel");
-    panelElement.style.width = "50%";
-    setFull(false)
   };
 
   return (
@@ -73,8 +65,6 @@ const Popup = () => {
           closePanel={closePanel}
           showPanel={showPanel}
           expandPanel={expandPanel}
-          halfPanel={halfPanel}
-          isFull={isFull}
         />
       )}
     </div>
